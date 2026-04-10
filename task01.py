@@ -19,6 +19,7 @@ maxsulotlar = [
     }
 ]
 
+<<<<<<< HEAD
 def jami_qiymat(maxsulotlar: list[dict[str, int | str]]) -> float | int:
     jami = 0
     for tovar in maxsulotlar:
@@ -52,3 +53,36 @@ jami = jami_qiymat(maxsulotlar)
 print(nor_narxi)
 print(jami)
 print(urtacha)
+=======
+# 1. Jami qiymat
+def total_amount(products: list[dict[str, int | str]]) -> float | int:
+    total = 0
+    for product in products:
+        total += product['price'] * product['quantity']
+
+    return total
+
+# 2. Eng qimmat product
+def get_max_product(products: list[dict[str, int | str]]) -> dict[str, int | str] | None:
+    if not products:
+        return None
+    
+    max_product = products[0]
+    for product in products:
+        if product['price'] > max_product['price']:
+            max_product = product
+
+    return max_product
+
+# 3. O'rtacha narx
+def get_avg_price(products: list[dict[str, int | str]]) -> float | int:
+    total = 0
+    for product in products:
+        total += product['price']
+
+    avg = total / len(products)
+    return avg
+
+avg = get_avg_price(products)
+print(avg)
+>>>>>>> f1ec0e16fb6300d6060b4e6069e137ee50972ec9
