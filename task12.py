@@ -1,3 +1,7 @@
-product = "apple"
-if product not in inventory:
-    inventory[product] = 0
+products = "apple"
+# quantity = 0
+
+if product not in products:
+    p = product[products] = 0
+
+    print(p)
